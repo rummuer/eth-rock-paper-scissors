@@ -1,0 +1,110 @@
+{
+  "contractName": "RockPaperScissors",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058205c827a08bf101c2a34824b4514817fe39bcc7c05b4c805263139f9e8603d0c110029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058205c827a08bf101c2a34824b4514817fe39bcc7c05b4c805263139f9e8603d0c110029",
+  "sourceMap": "24:32:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:32:1;;;;;;;",
+  "deployedSourceMap": "24:32:1:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\ncontract RockPaperScissors {\n\t\n}",
+  "sourcePath": "/home/ubuntu/eth-rock-paper-scissors/contracts/RockPaperScissors.sol",
+  "ast": {
+    "absolutePath": "/home/ubuntu/eth-rock-paper-scissors/contracts/RockPaperScissors.sol",
+    "exportedSymbols": {
+      "RockPaperScissors": [
+        59
+      ]
+    },
+    "id": 60,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59
+        ],
+        "name": "RockPaperScissors",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 60,
+        "src": "24:32:1"
+      }
+    ],
+    "src": "0:56:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ubuntu/eth-rock-paper-scissors/contracts/RockPaperScissors.sol",
+    "exportedSymbols": {
+      "RockPaperScissors": [
+        59
+      ]
+    },
+    "id": 60,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59
+        ],
+        "name": "RockPaperScissors",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 60,
+        "src": "24:32:1"
+      }
+    ],
+    "src": "0:56:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x099F235375821d0EED3C9EBc1fe5ff3cf3d18918",
+      "transactionHash": "0xd756102fb4929dc6bd97675fbec72020b13349f9efa5e616db855ecdfbb6ea78"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-04-17T09:24:39.074Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,45 @@
+</!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors Ethereum DAPP</title>
+    <link rel="stylesheet" href="styles.css">  
+</head>
+
+<body>
+    <header>
+        <div class="address" >
+        <span><h1>Rock Paper Scissors Ethereum DAPP</h1></span>
+        <span>Contract Address :</span><span id="account"></span>
+    </div>
+    </header>
+    <div class="score-board">
+        <div id="user-label" class="badge">user</div>
+        <div id="computer-label" class="badge">comp</div>
+        <span id="user-score">0</span>
+        <span>:</span>
+        <span id="computer-score">0</span>
+    </div>
+    <div class="result">
+        <p>Paper covers rock. You win!</p>
+    </div>
+    <div class="choices">
+        <div class="choice" id="r">
+            <img  src="images/rock.png" alt="">
+        </div>
+        <div class="choice" id="p">
+            <img src="images/paper.png" alt="">
+        </div>
+        <div class="choice" id="s">
+            <img src="images/scissors.png" alt="">
+        </div>
+    </div>
+    <p id="action-message">Make your Move</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script charset="utf-8" src="app.js"></script>
+</body>
+
+</html>
