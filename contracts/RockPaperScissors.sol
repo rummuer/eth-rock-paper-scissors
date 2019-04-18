@@ -29,8 +29,11 @@ contract RockPaperScissors {
 			require (contractBal >= msg.value,"Not enough Balence");
 			string memory scChoice = choices[getSCChoice()];
 			if((compareStrings(userChoice,'r') && compareStrings(scChoice,'s')) || (compareStrings(userChoice,'p') && compareStrings(scChoice,'r')) || (compareStrings(userChoice,'s') && compareStrings(scChoice,'p'))) {
-				wins(userChoice,scChoice);
-				msg.sender.transfer(msg.value);
+				wins(userChoice,scChoice);	
+				uint newContractBal = contractBal - msg.value;	
+				uint x = contractBal - newContractBal;
+				contractBal = newContractBal;		
+				msg.sender.transfer(x + msg.value);
 			}			
 			if((compareStrings(userChoice,'r') && compareStrings(scChoice,'p')) || (compareStrings(userChoice,'p') && compareStrings(scChoice,'s')) || (compareStrings(userChoice,'s') && compareStrings(scChoice,'r'))) {
 				lose(userChoice,scChoice);
