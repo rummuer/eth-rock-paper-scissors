@@ -66,8 +66,10 @@ App = {
         }
         App.setLoading(true)
         $('#account').html(await App.rockPaperScissors.address)
-        const contractBalence = await App.rockPaperScissors.contractBal()
-        $('#contractBal').html(contractBalence.toNumber())
+        let contractBalence = await App.rockPaperScissors.contractBal()
+        contractBalence = contractBalence.toNumber()
+        contractBalence = contractBalence /1000000000000000000
+        $('#contractBal').html(contractBalence)
         App.setLoading(false)
 
     },
@@ -138,6 +140,7 @@ App = {
         const winner = e.logs[0].args.winner;
         const us = await App.rockPaperScissors.userScore();
         const ss = await App.rockPaperScissors.scScore();
+        console.log(winner);
         if (winner == "user") { App.wins(e.logs[0].args._userChoice, e.logs[0].args._scChoice); }
         if (winner == "comp") { App.lose(e.logs[0].args._userChoice, e.logs[0].args._scChoice); }
         if (winner == "draw") { App.draw(e.logs[0].args._userChoice, e.logs[0].args._scChoice); }

@@ -30,8 +30,7 @@ contract RockPaperScissors {
 			string memory scChoice = choices[getSCChoice()];
 			if((compareStrings(userChoice,'r') && compareStrings(scChoice,'s')) || (compareStrings(userChoice,'p') && compareStrings(scChoice,'r')) || (compareStrings(userChoice,'s') && compareStrings(scChoice,'p'))) {
 				wins(userChoice,scChoice);
-				contractBal = contractBal - msg.value;
-				msg.sender.transfer(2*msg.value);
+				msg.sender.transfer(msg.value);
 			}			
 			if((compareStrings(userChoice,'r') && compareStrings(scChoice,'p')) || (compareStrings(userChoice,'p') && compareStrings(scChoice,'s')) || (compareStrings(userChoice,'s') && compareStrings(scChoice,'r'))) {
 				lose(userChoice,scChoice);
@@ -44,7 +43,7 @@ contract RockPaperScissors {
 
 
 	}
-	function compareStrings (string memory a, string memory b) internal 
+	function compareStrings (string memory a, string memory b) internal pure
      returns (bool) {
   	 return (keccak256(abi.encodePacked((a))) == keccak256(abi.encodePacked((b))) );
        }
