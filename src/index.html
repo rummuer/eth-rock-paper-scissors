@@ -9,10 +9,22 @@
 <body>
     <header>
         <div class="address" >
-        <span><h1>Rock Paper Scissors Ethereum DAPP</h1></span>
-        <span>Contract Address :</span><span id="account"></span>
+        <div><span><h1>Rock Paper Scissors Ethereum DAPP</h1></span></div>
+        <div><span>Contract Address :</span><span id="account"></span></div>
+        <div><span>Contract balence : </span><span id="contractBal"></span>
+            <span>Wei</span>        
+        </div>
     </div>
     </header>
+    <div class="moneys">
+        <button class="money" id="addether" onclick="App.addEther();">Add Ether</button>
+        <button class="money" id="withdrawether" onclick="App.withdrawEther();">Withdraw Ether</button>
+    </div>
+    <div class="moneys"> 
+        <button class="money" id="raiseBet" onclick="App.raiseBet()">Raise Bet</button>
+        <span id="bet">10</span>
+        <button class= "money" id="decreaseBet" onclick="App.decreaseBet()">Decrease Bet</button>
+    </div>
     <div class="score-board">
         <div id="user-label" class="badge">user</div>
         <div id="computer-label" class="badge">comp</div>
