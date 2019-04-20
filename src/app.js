@@ -53,6 +53,7 @@ App = {
     },
     loadAccount: async () => {
         App.account = web3.eth.accounts[0]
+        App.uBal = web3.eth.accounts[0].balance;
     },
     loadContract: async () => {
         const rockPaperScissors = await $.getJSON('RockPaperScissors.json')
@@ -70,6 +71,7 @@ App = {
         contractBalence = contractBalence.toNumber()
         contractBalence = contractBalence /1000000000000000000
         $('#contractBal').html(contractBalence)
+        $('#uAccount').html(App.account);
         App.setLoading(false)
 
     },
@@ -80,9 +82,9 @@ App = {
     },
 
     wins: async (userChoice, computerChoice) => {
-        const us = await App.rockPaperScissors.userScore();
+        const us = await App.rockPaperScissors.getUserScore(App.account);
         App.userScore = us.toNumber();
-        const ss = await App.rockPaperScissors.scScore();
+        const ss = await App.rockPaperScissors.getCompScore(App.account);
         App.computerScore = ss.toNumber();
 
         App.userScore_span.innerHTML = App.userScore;
@@ -96,11 +98,11 @@ App = {
         await setTimeout(function() { document.getElementById(userChoice).classList.remove('green-glow') }, 1000);
         App.render()
     },
-
+    
     lose: async (userChoice, computerChoice) => {
-        const us = await App.rockPaperScissors.userScore();
+        const us = await  App.rockPaperScissors.getUserScore(App.account);
         App.userScore = us.toNumber();
-        const ss = await App.rockPaperScissors.scScore();
+        const ss = await App.rockPaperScissors.getCompScore(App.account);
         App.computerScore = ss.toNumber();
 
         App.userScore_span.innerHTML = App.userScore;
@@ -116,9 +118,9 @@ App = {
     },
 
     draw: async (userChoice, computerChoice) => {
-        const us = await App.rockPaperScissors.userScore();
+        const us = await App.rockPaperScissors.getUserScore(App.account);
         App.userScore = us.toNumber();
-        const ss = await App.rockPaperScissors.scScore();
+        const ss = await App.rockPaperScissors.getCompScore(App.account);
         App.computerScore = ss.toNumber();
 
         App.userScore_span.innerHTML = App.userScore;
@@ -138,8 +140,8 @@ App = {
         betAmount = +betAmount * 1000000000000000000
         const e = await App.rockPaperScissors.game(userChoice, { value: betAmount })
         const winner = e.logs[0].args.winner;
-        const us = await App.rockPaperScissors.userScore();
-        const ss = await App.rockPaperScissors.scScore();
+     //   const us = await App.rockPaperScissors.userScore();
+      //  const ss = await App.rockPaperScissors.scScore();
         console.log(winner);
         if (winner == "user") { App.wins(e.logs[0].args._userChoice, e.logs[0].args._scChoice); }
         if (winner == "comp") { App.lose(e.logs[0].args._userChoice, e.logs[0].args._scChoice); }

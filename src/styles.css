@@ -12,7 +12,7 @@ body {
 
 header {
     background: #3f5d9a;
-    padding: 20px;
+    padding: 10px;
 }
 
 header>.address {
@@ -20,12 +20,18 @@ header>.address {
     text-align: center;
     font-family: Asap, sans-serif;
 }
-h1 {
+h3 {
     color: white;
 }
+.player {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: Asap, sans-serif;
 
+}
 .score-board {
-    margin: 20px auto;
+    margin: 10px auto;
     border: 3px solid white;
     border-radius: 4px;
     text-align: center;
@@ -69,7 +75,7 @@ h1 {
 }
 
 .choices {
-    margin: 50px;
+    margin: 30px;
     text-align: center;
 }
 
