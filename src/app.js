@@ -12,6 +12,7 @@ App = {
     scissors_div: document.getElementById("s"),
 
     load: async () => {
+        console.log("I am here");
         await App.loadWeb3() // talk to BC using web3
         await App.loadAccount()
         await App.loadContract()
